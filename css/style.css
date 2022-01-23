@@ -23,7 +23,8 @@
 *::before{
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 html, body{
@@ -57,9 +58,15 @@ h1{
   height: 100%;
   width: 100%;
   margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: var(--padding);
 }
 
@@ -69,11 +76,14 @@ h1{
   text-align: center;
   border-radius: var(--border-radius);
 
-  box-shadow: 0px 0px 100px 10px rgb(0 0 0 / 16%);
+  -webkit-box-shadow: 0px 0px 100px 10px rgb(0 0 0 / 16%);
+          box-shadow: 0px 0px 100px 10px rgb(0 0 0 / 16%);
 }
 
   .card-body {
+    display: -ms-grid;
     display: grid;
+    -ms-grid-rows: (minmax(100px, 1fr));
     grid-template-rows: repeat(2, minmax(100px, 1fr) );
     position: relative;
     right: 0;
@@ -100,7 +110,9 @@ h1{
         top: 50%;
         left: 50%;
         border-radius: 50%;
-        transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
       }
 
         .card-avatar > img{
@@ -110,10 +122,19 @@ h1{
         }
 
     .card-content{
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      align-items: center;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      -webkit-box-pack: end;
+          -ms-flex-pack: end;
+              justify-content: flex-end;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
       text-align: center;
       padding: var(--padding);
     }
@@ -135,8 +156,11 @@ h1{
 
       ul.card-metrics{
         list-style: none;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: space-around;
+        -ms-flex-pack: distribute;
+            justify-content: space-around;
       }
 
         .metric-value{
