@@ -145,6 +145,7 @@ h1{
       }
 
       .card-number{
+        margin-left: .5rem;
         font-weight: 400;
         display: inline-block;
       }  
@@ -164,6 +165,7 @@ h1{
       }
 
         .metric-value{
+          font-size: var(--font-size-lg);
           display: block;
           font-weight: 700;
           color: var(--desaturated-blue);
