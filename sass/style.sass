@@ -1,0 +1,137 @@
+\:root
+  --dark-cyan: hsl(185, 75%, 39%)
+  --desaturated-blue: hsl(229, 23%, 23%)
+  --grayish-blue: hsl(227, 10%, 46%)
+  --dark-gray: hsl(0, 0%, 59%)
+  --dark-gray-opacity: hsla(0, 0%, 59%, 0.24)
+  --white: #fff
+
+  --font-size: 14px
+  --line-height: 20px
+
+  --font-size-lg: 18px
+  --line-height-lg: 24px
+
+  --font-family: 'Kumbh Sans', sans-serif
+
+  --padding: 2rem
+  --border-radius: 1rem
+
+*,
+*::after,
+*::before
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+
+html,
+body
+  min-height: 100vh
+  height: 100%
+  font-size: var(--font-size)
+  font-family: var(--font-family)
+  line-height: var(--line-height)
+  color: var(--dark-gray)
+  background-color: var(--dark-cyan)
+
+body
+  background-image: url("../images/bg-pattern-top.svg"), url("../images/bg-pattern-bottom.svg")
+  background-position: right 50vw bottom 44vh, left 48vw top 40vh
+  background-repeat: no-repeat
+  background-attachment:fixed
+
+h1
+  font-size: var(--font-size-lg)
+  line-height: var(--line-height-lg)
+  padding-bottom: .5rem
+  padding-top: 3rem
+
+.main-container
+  max-width: 1400px
+  height: 100%
+  width: 100%
+  margin: 0 auto
+  display: flex
+  justify-content: center
+  align-items: center
+  padding: var(--padding)
+
+.card
+  background-color: var(--white)
+  text-align: center
+  border-radius: var(--border-radius)
+  box-shadow: 0px 0px 100px 10px rgba(0, 0, 0, 0.16)
+
+  &-body 
+    display: grid
+    grid-template-rows: repeat(2, minmax(100px, 1fr) )
+    position: relative
+    right: 0
+    top: 0
+    width: 100%
+    background-color: var(--white)
+    border-top-left-radius: var(--border-radius)
+    border-top-right-radius: var(--border-radius)
+  
+  &-header
+    overflow: hidden
+    border-top-left-radius: var(--border-radius)
+    border-top-right-radius: var(--border-radius)
+    
+  &-avatar
+    background-color: var(--white)
+    position: absolute
+    top: 50%
+    left: 50%
+    border-radius: 50%
+    transform: translate(-50%, -50%)
+
+    > img
+      border: .4rem solid var(--white)
+      border-radius: 50%
+      width: 100%
+
+  &-content
+    display: flex
+    flex-direction: column
+    justify-content: flex-end
+    align-items: center
+    text-align: center
+    padding: var(--padding)
+
+  &-user
+    color: var(--desaturated-blue)
+    display: inline-block
+
+  &-number
+    margin-left: .5rem
+    font-weight: 400
+    display: inline-block
+
+  &-footer
+    border-top: 1px solid var(--dark-gray-opacity)
+    padding: var(--padding)
+
+ul
+  &.card
+    &-metrics
+      list-style: none
+      display: flex
+      justify-content: space-around
+
+  .card
+    &-metrics
+      &-value
+        font-size: var(--font-size-lg)
+        display: block
+        font-weight: 700
+        color: var(--desaturated-blue)
+
+      &-title
+        display: block
+        letter-spacing: 1px
+        font-size: calc(var(--font-size) / 1.3)
+
+@media screen and (min-width: 992px)
+  body
+    background-position: right 48vw bottom 44vh, left 50vw top 50vh
